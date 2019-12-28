@@ -1,2 +1,2 @@
 OSTA
-online student talent aquazition.
+online student talent acquisition
