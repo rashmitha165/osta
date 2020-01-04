@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -19,10 +23,8 @@
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-
     </head>
-
-
+    
     <body class="fixed-left">
 
         <!-- Loader -->
@@ -282,7 +284,7 @@
                                 <li class="list-inline-item dropdown notification-list hidden-xs-down">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect text-muted" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
-                                        English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
+                                        Welcome <?php echo $_SESSION['name']; ?> <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right language-switch">
                                         <a class="dropdown-item" href="#"><img src="assets/images/flags/germany_flag.jpg" alt="" height="16"/><span> German </span></a>
