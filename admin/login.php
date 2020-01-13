@@ -1,18 +1,18 @@
-﻿<?php 
+<?php 
 include('connect.php');
 session_start();
 if(isset($_POST['login']))
 {
     $email = $_POST['email'];
     $password=$_POST['password'];
-    $query=mysqli_query($connection, "SELECT * FROM users WHERE uemail='$email' AND upassword='$password'");
+    $query=mysqli_query($connection, "SELECT * FROM users WHERE aemail='$email' AND apassword='$password'");
     $getdata = mysqli_fetch_assoc($query);
     $count = mysqli_num_rows($query);
     if($count>=1)
     {
         $smsg="Login successful";
-        $_SESSION['uid'] = $getdata['uid'];
-        $_SESSION['name'] = $getdata['ufname'];
+        $_SESSION['aid'] = $getdata['aid'];
+        $_SESSION['name'] = $getdata['afname'];
         echo "<script>window.location.href='index.php'</script>";
     }
     else
@@ -41,7 +41,8 @@ if(isset($_POST['login']))
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
-    
+
+
     <body class="fixed-left">
 
         <!-- Loader -->
@@ -72,16 +73,16 @@ if(isset($_POST['login']))
                             <?php echo $fmsg; ?>
                         </div>
                         <?php } ?>
-                        <form class="form-horizontal m-t-30" method="post">
+                        <form class="form-horizontal m-t-30" action="index.html">
 
                             <div class="form-group">
                                 <label for="username">email</label>
-                                <input name="email" type="text" class="form-control" id="username" placeholder="Enter email">
+                                <input name="email"type="text" class="form-control" id="username" placeholder="Enter email">
                             </div>
 
                             <div class="form-group">
                                 <label for="userpassword">Password</label>
-                                <input name="password" type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                <input name="password"type="password" class="form-control" id="userpassword" placeholder="Enter password">
                             </div>
 
                             <div class="form-group row m-t-20">
@@ -92,7 +93,7 @@ if(isset($_POST['login']))
                                     </div>
                                 </div>
                                 <div class="col-sm-6 text-right">
-                                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit" name="login">Log In</button>
+                                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
                                 </div>
                             </div>
 
