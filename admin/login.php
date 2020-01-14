@@ -77,12 +77,12 @@ if(isset($_POST['login']))
 
                             <div class="form-group">
                                 <label for="username">email</label>
-                                <input name="email"type="text" class="form-control" id="username" placeholder="Enter email">
+                                <input name="email" type="text" class="form-control" id="username" placeholder="Enter email">
                             </div>
 
                             <div class="form-group">
                                 <label for="userpassword">Password</label>
-                                <input name="password"type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                <input name="password" type="password" class="form-control" id="userpassword" placeholder="Enter password">
                             </div>
 
                             <div class="form-group row m-t-20">
