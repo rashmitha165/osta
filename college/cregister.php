@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
     $mobile=$_POST['mobile'];
     $password=$_POST['password'];
 
-    $insert_query=mysqli_query($connection, "INSERT INTO users (ufname,ulname,uemail,umobile,upassword) VALUES ('$fname','$lname','$email','$mobile','$password')");
+    $insert_query=mysqli_query($connection, "INSERT INTO users (sfname,slanme,semail,smobile,spassword) VALUES ('$fname','$lname','$email','$mobile','$password')");
     if($insert_query)
     {
         $smsg="Registration successful";
@@ -61,22 +61,26 @@ if(isset($_POST['submit']))
                     <div class="p-3">
                         <h4 class="font-18 m-b-5 text-center">Free Register</h4>
                         <p class="text-muted text-center">Get your free Admiria account now.</p>
-
+                        <?php if(isset($smsg)) { ?>
+                        <div class="alert alert-success" role="alert">
+                                <strong>Well done!</strong><?php echo $smsg; ?>
+                        </div>
+                        <?php } ?>
                         <form class="form-horizontal m-t-30" action="index.html">
 
                             <div class="form-group">
-                                <label for="useremail">Email</label>
-                                <input type="email" class="form-control" id="useremail" placeholder="Enter email">
+                                <label for="username">First name</label>
+                                <input required type="text" class="form-control" name="fname" id="username" placeholder="Enter email">
                             </div>
 
                             <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                <label for="username">Last name</label>
+                                <input required type="text" class="form-control" name="lanme" id="username" placeholder="Enter username">
                             </div>
 
                             <div class="form-group">
                                 <label for="userpassword">Password</label>
-                                <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                <input required name="password" type="password" class="form-control" id="userpassword" placeholder="Enter password">
                             </div>
 
                             <div class="form-group row m-t-20">
