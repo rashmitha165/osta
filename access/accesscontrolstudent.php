@@ -1,13 +1,13 @@
 <?php 
 include_once '../access/connect.php';
 session_start();
-if(!isset($_SESSION['aid']))
+if(!isset($_SESSION['sid']))
 {
     echo "<script>window.location='../access/403.php'</script>";
 }
 else
 {
-    $globalaid=$_SESSION['aid'];
-    $globalaname=$_SESSION['aname'];
+    $globalsid=$_SESSION['sid'];
+    $globalsname=$_SESSION['sname'];
 }
 ?>
